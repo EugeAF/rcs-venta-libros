@@ -1,5 +1,6 @@
 import React, {useState} from "react"; 
 import NewBook from "../NewBook/NewBook";
+import Modal from "../Modal/Modal";
 
 function Admin() {
 
@@ -20,7 +21,6 @@ function Admin() {
         localStorage.setItem('books', JSON.stringify(products));
         setBook(products)
     };
-
 
     return( 
         <div>
@@ -48,7 +48,8 @@ function Admin() {
                                 </td>
                                 <td>${item.cost}</td>
                                 <button type="button" className="btn bg-danger btn-danger mt-2" onClick={() => delate(index)}>Delate</button>
-                                {/*<button type="button" className="btn bg-danger btn-danger mt-2" onClick={() => delate(index)}>Delate</button>*/}
+                                {/*<button type="button" className="btn bg-secondary btn-secondary mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Edit</button>
+                                <Modal indice={index}/>*/}
                         </tr>
                         ))}
                 </tbody>

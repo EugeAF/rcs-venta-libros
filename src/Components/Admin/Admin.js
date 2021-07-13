@@ -25,6 +25,7 @@ function Admin() {
             <table className="table container">
                 <thead>
                     <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
                         <th scope="col">Img</th>
@@ -34,7 +35,7 @@ function Admin() {
                 </thead>
                 <tbody>
                         {book.map((item, index) => (
-                            <Table key={index} name={item.name} description={item.description} img={item.img} cost={item.cost}/>
+                            <Table prueba={index} name={item.name} description={item.description} img={item.img} cost={item.cost}/>
                         ))}
                 </tbody>
             </table>

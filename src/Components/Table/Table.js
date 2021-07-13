@@ -10,6 +10,7 @@ function Table(props){
 
     return(
         <tr>
+            <td>{props.prueba}</td>
             <td>{props.name}</td>
             <td>{props.description}</td>
             <td>

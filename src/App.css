@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.form-contact{
+  height: 65vh;
+}
+
+.card {
+  width: 18rem;
+}
+

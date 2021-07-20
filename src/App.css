@@ -45,3 +45,6 @@
   width: 18rem;
 }
 
+.modal-content{
+  background-color: #fff !important;
+}

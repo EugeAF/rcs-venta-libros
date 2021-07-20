@@ -1,7 +1,7 @@
 import Card from "../Card/Card";
 
 function Products() {
-    const products = JSON.parse(localStorage.getItem('books'));
+    const products = JSON.parse(localStorage.getItem('books')) || [];
 
     return(
         <div className="container">

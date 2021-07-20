@@ -2,19 +2,21 @@ import React, {useState} from "react";
 
 function Contact() {
 
+    /*Listado de Usuarios*/
     const [newAccount, setNewAccount] = useState({
         email: '',
         password: '',
-    })
+    });
     
+    /*Setea */
     const setAccount = (event) =>{
-        setNewAccount({...newAccount, [event.target.name]: event.target.value})
-    }
+        setNewAccount({...newAccount, [event.target.name]: event.target.value});
+    };
 
     const accounts = () => {
         JSON.parse(localStorage.getItem('account'));
         localStorage.setItem('account', JSON.stringify(newAccount));
-    }
+    };
 
     return(
         <form className="d-flex flex-column align-items-center form-contact justify-content-center">

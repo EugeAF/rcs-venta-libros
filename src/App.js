@@ -7,6 +7,7 @@ import Home from "./Components/Home/Home";
 import Admin from "./Components/Admin/Admin";
 import Contact from "./Components/Contact/Contact";
 import Products from "./Components/Products/Products";
+import Fetch from "./Components/Fetch/Fetch";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -17,6 +18,9 @@ function App() {
       <div>
         <Navbar />
         <Switch>
+          <Route path="/fetch">
+            <Fetch />
+          </Route>
           <Route path="/productos">
             <Products />
           </Route>

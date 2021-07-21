@@ -2,6 +2,9 @@ import React, {useState} from "react";
 
 function Contact() {
 
+    const [prueba, setPrueba] = useState(JSON.parse(localStorage.getItem('account')) || []);
+    localStorage.setItem('account', JSON.stringify(prueba)); 
+
     /*Listado de Usuarios*/
     const [newAccount, setNewAccount] = useState({
         email: '',
@@ -14,8 +17,16 @@ function Contact() {
     };
 
     const accounts = () => {
-        JSON.parse(localStorage.getItem('account'));
-        localStorage.setItem('account', JSON.stringify(newAccount));
+        if(newAccount.email != "" && newAccount.password != ""){
+            setPrueba([...prueba, newAccount]);
+            localStorage.setItem('account', JSON.stringify(prueba));
+            setNewAccount({
+                email: '',
+                password: '',
+            });
+        }else{
+            alert("Complete los campos")
+        }
     };
 
     return(

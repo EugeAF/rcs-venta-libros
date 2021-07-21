@@ -1,6 +1,6 @@
 import React, {useState} from "react"; 
 import Add from "../Add/Add";
-import Modal from "../Modal/Modal";
+import Modal from "../Edit/Edit";
 
 function Admin() {
     let [book, setBook] = useState(JSON.parse(localStorage.getItem('books')) || []);

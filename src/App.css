@@ -48,3 +48,17 @@
 .modal-content{
   background-color: #fff !important;
 }
+
+.card img{
+ height: 40vh;
+}
+
+.boton a{
+  height: 90%;
+}
+
+.boton{
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+}

@@ -8,6 +8,8 @@ import Admin from "./Components/Admin/Admin";
 import Contact from "./Components/Contact/Contact";
 import Products from "./Components/Products/Products";
 import Fetch from "./Components/Fetch/Fetch";
+import PostsDetalles from "./Components/PostsDetalles/PostsDetalles";
+import Posts from "./Components/Posts/Posts";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -30,7 +32,13 @@ function App() {
           <Route path="/admin">
             <Admin />
           </Route>
-          <Route path="/">
+          <Route path="/posts/:id">
+            <PostsDetalles />
+          </Route>
+          <Route path="/posts">
+            <Posts />
+          </Route>
+          <Route path="/" exact>
             <Home />
           </Route>
         </Switch>

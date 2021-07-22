@@ -48,7 +48,8 @@ function Admin() {
                         <th scope="col">Description</th>
                         <th scope="col">Img</th>
                         <th scope="col">Cost</th>
-                        <th scope="col">Accions</th>
+                        <th scope="col">Eliminar</th>
+                        <th scope="col">Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -56,14 +57,18 @@ function Admin() {
                             <tr>
                                 <td>{index}</td>
                                 <td>{item.name}</td>
-                                <td>{item.description}</td>
+                                <td className="w-50">{item.description}</td>
                                 <td>
-                                    <img src={item.img} className="card-img-top w-25" alt="..." />
+                                    <img src={item.img} className="card-img-top w-100 ms-2" alt="..." />
                                 </td>
                                 <td>${item.cost}</td>
-                                <button type="button" className="btn bg-danger btn-danger mt-2 w-25" onClick={() => remove(index)}>Remove</button>
-                                <button type="button" className="btn bg-secondary btn-secondary mt-2 ms-2 w-25" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setIndice(index)}>Edit
-                                </button>
+                                <td>
+                                    <button type="button" className="btn bg-danger btn-danger" onClick={() => remove(index)}>Remove</button>
+                                </td>
+                                <td>
+                                    <button type="button" className="btn bg-secondary btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setIndice(index)}>Edit
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                 </tbody>

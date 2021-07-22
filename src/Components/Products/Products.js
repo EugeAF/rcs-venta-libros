@@ -5,9 +5,9 @@ function Products() {
 
     return(
         <div className="container">
-              <div className="row justify-content-between mt-3">
+              <div className="row justify-content-evenly mt-3">
                 {products.map((item, index) => (
-                  <Card key={index}  name={item.name} description={item.description} img={item.img} cost={item.cost}/>
+                  <Card key={index}  name={item.name} img={item.img} cost={item.cost}/>
                 ))}
               </div>
         </div> 

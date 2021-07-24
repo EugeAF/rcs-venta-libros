@@ -12,11 +12,13 @@ function Edit(props) {
         name: '',
         description: '',
         img: '',
-        cost: ''
+        cost: '',
+        destacado: true
     });
 
     let setEditObj = (event) => {
-        setEdit({ ...edit, [event.target.name]: event.target.value });
+        let value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        setEdit({ ...edit, [event.target.name]: value });
     };
 
     const editFunction = () => {
@@ -53,6 +55,9 @@ function Edit(props) {
 
                             <label htmlFor="">Cost</label>
                             <input type="text" name="cost" value={edit.cost} onChange={setEditObj} />
+
+                            <label htmlFor="">Destacado</label>
+                            <input type="checkbox" checked={edit.destacado} name="destacado" className="w-25" onChange={setEditObj} />  
                         </form>
                     </div>
                     <div class="modal-footer">

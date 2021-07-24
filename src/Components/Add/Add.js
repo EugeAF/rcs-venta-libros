@@ -6,22 +6,24 @@ function Add(props) {
         name: '',
         description: '',
         img: '',
-        cost: ''
+        cost: '',
+        destacado: true
     });
 
     const setBookObj = (event) => {
-        setNewBook({ ...newBook, [event.target.name]: event.target.value });
+        let value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
+        setNewBook({ ...newBook, [event.target.name]: value });
     };
 
     const addNewBook = () => {
-        debugger
         if (newBook.name != "" && newBook.description != "" && newBook.img != "" && newBook.cost != "") {
             props.addParentBook(newBook);
             setNewBook({
                 name: '',
                 description: '',
                 img: '',
-                cost: ''
+                cost: '',
+                destacado: false
             });
         }else{
             alert("Complete los campos");
@@ -44,6 +46,9 @@ function Add(props) {
 
                 <label htmlFor="">Cost</label>
                 <input type="text" name="cost" className="w-25" value={newBook.cost} onChange={setBookObj} />
+
+                <label htmlFor="">Destacado</label>
+                <input type="checkbox" checked={newBook.destacado} name="destacado" className="w-25" onChange={setBookObj} />
 
                 <a className="btn btn-primary w-25 mt-3" onClick={addNewBook}>Add</a>
             </form>

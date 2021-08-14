@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from "react";
 
 function Fetch() {
-    const [data, setDatas] = useState({})
+    const [data, setDatas] = useState([])
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('http://localhost:3000/users')
             .then(response => response.json())
-            .then(data => setDatas(data))
+            .then(hola => {
+                console.log(hola)
+                setDatas(hola)
+            })
     }, [])
 
     return(
@@ -14,8 +17,8 @@ function Fetch() {
             <div className="row">
             {data.map((item) => (
                 <div className="col-3">
-                    <h3>Title: {item.title}</h3>
-                    <p>Content: {item.body}</p>
+                    <h3>Nombre: {item.nombre}</h3>
+                    <p>Password: {item.password}</p>
                 </div>
             ))}
             </div>
